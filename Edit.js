@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import {Alert, View, Button, Text, TextInput, StyleSheet} from 'react-native';
-import { datasource } from './Data.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const styles = StyleSheet.create({
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
 const Edit = ({navigation, route}) => {
 
     let mydata = JSON.parse(route.params.datastring);
-    let myindex = route.params.index;
+    // let myindex = route.params.index;
 
     const[book,setBook] = useState(route.params.key);
 
@@ -48,18 +47,21 @@ const Edit = ({navigation, route}) => {
 
         <Text style={styles.inputHeader}> Image URL</Text>
         <TextInput maxLength={10000} style={styles.inputBox} onChangeText={(text)=>setBook(text)}/>
-      <View style={{flexDirection:"row"}}>
-        <View style={{margin:10,flex:1}}>
-        <Button title='Save'
-          onPress={()=>{
-            let indexnum = 1
 
-              mydata[indexnum].data.push(item);
-              let stringdata = JSON.stringify(mydata);
-              setData(stringdata);
-          }
-        }
-        />
+        <View style={{flexDirection:"row"}}>
+
+            <View style={{margin:10,flex:1}}>
+
+                <Button title='Save'
+                        onPress={()=>{
+                        let indexnum = 1
+
+                          mydata[indexnum].data.push(item);
+                          let stringdata = JSON.stringify(mydata);
+                          setData(stringdata);
+                      }
+                    }
+                    />
         </View>
 
         <View style={{margin:10,flex:1}}>

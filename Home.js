@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import {StatusBar, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { datasource } from './Data.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
