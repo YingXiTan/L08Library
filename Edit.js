@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 const Edit = ({navigation, route}) => {
 
     let mydata = JSON.parse(route.params.datastring);
-    // let myindex = route.params.index;
+    let myindex = route.params.index;
 
     const[book,setBook] = useState(route.params.key);
 
